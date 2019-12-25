@@ -42,7 +42,7 @@ def one_cycle(x_train, y_train, x_test, y_test):
             return self.predict(x) * 2 - 1
 
     def trainSVM(x, y):
-        w = np.random.normal(size=(8, 2))
+        w = np.random.normal(size=(5, 2))
         b = np.random.normal(size=(2,))
 
         c = 0.01
@@ -106,9 +106,13 @@ x = df.values
 y = x[:, 8]
 x = x[:, :8]
 
+M = np.random.normal(0, 0.2, size=(8, 5))
+x = x @ M
+
 result_accuracy = np.array([])
 
 for k in range(10):
+    print(k)
     x_test = x[int(k * (x.shape[0] / 10)): int((k + 1) * (x.shape[0] / 10))]
     y_test = y[int(k * (y.shape[0] / 10)): int((k + 1) * (y.shape[0] / 10))]
 

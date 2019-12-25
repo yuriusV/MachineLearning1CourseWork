@@ -18,7 +18,6 @@ def one_cycle(x_train, y_train, x_test, y_test):
         return np.sign(x) / 2 + 1 / 2
 
     def grad(w, b, x, y, c):
-
         hep = h(w, b, x)
 
         dw1 = -c * ((H(1 - y.T[0] * hep.T[0]) * y.T[0])[:, np.newaxis] * x).sum(axis=0) + 2 * w.T[0]
@@ -60,6 +59,7 @@ x = x @ M
 result_accuracy = np.array([])
 
 for k in range(10):
+    print(k)
     x_test = x[int(k * (x.shape[0] / 10)): int((k + 1) * (x.shape[0] / 10))]
     y_test = y[int(k * (y.shape[0] / 10)): int((k + 1) * (y.shape[0] / 10))]
 

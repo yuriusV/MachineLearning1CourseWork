@@ -9,3 +9,4 @@ def getDataSet():
     y = x[:, 8]
     x = x[:, :8]
     return (x, y)
+

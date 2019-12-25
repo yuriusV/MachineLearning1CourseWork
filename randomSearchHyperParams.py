@@ -74,6 +74,7 @@ def random_search(param_grid):
     best_lr = 0
 
     for i in range(50):
+        print(i)
         random_params = {k: random.sample(v, 1)[0] for k, v in param_grid.items()}
 
         result_accuracy = test_hyper_parameters(x, y, random_params['c'], random_params['lr'])

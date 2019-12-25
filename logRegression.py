@@ -55,6 +55,7 @@ def execute():
     result_accuracy = np.array([])
 
     for k in range(10):
+        print(k)
         start = int(k * piece10)
         x_test = x[start: start + piece10]
         y_test = y[start: start + piece10]
@@ -68,8 +69,10 @@ def execute():
         y_train = np.append(y_train_part_1, y_train_part_2, axis=0)
 
         result_accuracy = np.append(result_accuracy, iteration(x_train, y_train, x_test, y_test))
-    
+
     return result_accuracy.mean()
 
 def output():
     print("Resulted accuracy: %.2f" % execute() + "%")
+
+output()
